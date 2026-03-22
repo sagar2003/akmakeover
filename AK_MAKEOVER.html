@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A&K Makeover</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+/* HERO */
+.hero {
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 3rem;
+    z-index: 1;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.image-card {
+    height: 180px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+}
+
+.image-card span {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* SECTION */
+.section {
+    margin-bottom: 50px;
+    scroll-margin-top: 80px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ITEMS */
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.price {
+    font-weight: 600;
+}
+
+/* TABLE */
+.table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.table div {
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+}
+
+.footer-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <img src="https://instagram.famd21-2.fna.fbcdn.net/v/t51.82787-19/655063044_18068896547278247_5684349169581917611_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.famd21-2.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2gH7oTnXxxuhLCCXx3tozR8k-23EdfBIQa3CsqtIujq39onYl7_-krMt76YmwizOjGXqRqRZxpHwqwR_lXSJIr76&_nc_ohc=7byOIcn2NjMQ7kNvwENPDYt&_nc_gid=Ws1GeEm7i8NQXz6isZaDwA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfzoLKRzGaWtv36YlBHNDTrhtxasmmUyFuMyfy5AxJyI1w&oe=69C5A760&_nc_sid=8b3546" crossorigin="anonymous"/>
+    <h1>A&K MAKEOVER</h1>
+</div>
+
+<div class="container">
+
+    <!-- CLICKABLE CARDS -->
+    <div class="grid">
+        <div class="image-card" onclick="go('facial')" style="background-image:url('https://images.unsplash.com/photo-1519415510236-718bdfcd89c8')"><span>Facial</span></div>
+        <div class="image-card" onclick="go('hair')" style="background-image:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f')"><span>Hair</span></div>
+        <div class="image-card" onclick="go('wax')" style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348')"><span>Wax</span></div>
+        <div class="image-card" onclick="go('eyebrow')" style="background-image:url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f')"><span>Eyebrow</span></div>
+        <div class="image-card" onclick="go('dtan')" style="background-image:url('https://images.unsplash.com/photo-1598440947619-2c35fc9aa908')"><span>D-Tan</span></div>
+    </div>
+
+    <!-- FACIAL -->
+    <div class="section" id="facial">
+        <h2>Facial</h2>
+        <div class="card">
+            <div class="item"><span>03+ With Hydra</span><span class="price">₹800</span></div>
+            <div class="item"><span>0XY Life</span><span class="price">₹600</span></div>
+            <div class="item"><span>Frutie</span><span class="price">₹400</span></div>
+            <div class="item"><span>Cleanup</span><span class="price">₹300</span></div>
+        </div>
+    </div>
+
+    <!-- HAIR -->
+    <div class="section" id="hair">
+        <h2>Hair</h2>
+        <div class="card">
+            <div class="item"><span>Hair Colour (Herbal)</span><span class="price">₹500</span></div>
+            <div class="item"><span>Permanent Hair Colour (L'Oreal)</span><span class="price">₹900</span></div>
+            <div class="item"><span>Keratin Hair Spa</span><span class="price">₹500</span></div>
+            <div class="item"><span>Staining</span><span class="price">₹500</span></div>
+            <div class="item"><span>Hair Cut</span><span class="price">₹300</span></div>
+            <div class="item"><span>Manicure - Pedicure</span><span class="price">₹1200-1500</span></div>
+        </div>
+    </div>
+
+    <!-- WAX -->
+    <div class="section" id="wax">
+        <h2>Wax</h2>
+        <div class="card table">
+            <div><strong>Type</strong></div><div><strong>Hand</strong></div><div><strong>Half Leg</strong></div><div><strong>Full Leg</strong></div>
+
+            <div>Gel Wax</div><div>₹80</div><div>₹120</div><div>₹120</div>
+            <div>Cream Wax</div><div>₹100</div><div>₹110</div><div>₹130</div>
+            <div>Brazilian Wax</div><div>₹120</div><div>₹140</div><div>₹150</div>
+            <div>Reka Wax</div><div>₹120</div><div>₹140</div><div>₹150</div>
+        </div>
+    </div>
+
+    <!-- EYEBROW -->
+    <div class="section" id="eyebrow">
+        <h2>Eyebrow</h2>
+        <div class="card">
+            <div class="item"><span>Eyebrow Trending</span><span class="price">₹40</span></div>
+            <div class="item"><span>Wax Eyebrow</span><span class="price">₹80</span></div>
+            <div class="item"><span>Under Arms</span><span class="price">₹30</span></div>
+            <div class="item"><span>Upper Lips</span><span class="price">₹20</span></div>
+        </div>
+    </div>
+
+    <!-- D-TAN -->
+    <div class="section" id="dtan">
+        <h2>D-Tan</h2>
+        <div class="card table">
+            <div><strong>Type</strong></div><div><strong>Face</strong></div><div><strong>Neck</strong></div><div><strong>Full Body</strong></div>
+
+            <div>D-Tan</div><div>₹100</div><div>₹150</div><div>₹300</div>
+            <div>Shiner</div><div>₹80</div><div>₹120</div><div>₹240</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p class="footer-p"><span>📞</span> 8799009078 / 9023075610</p>
+    <p class="footer-p" onClick="goInsta()"><img height="20" src="https://static.cdninstagram.com/rsrc.php/yO/r/Ny6hrBVLYjl.webp"/> @ak_make_over</p>
+</div>
+
+<script>
+function go(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function goInsta() {
+    window.open("https://www.instagram.com/ak_make_over", "_blank")
+}
+</script>
+
+</body>
+</html>
